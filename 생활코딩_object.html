@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Object</h1>
+
+  <h2>create</h2>
+
+  <script>
+    let cow = {
+      name : 'JW',
+      age : 28,
+    }
+
+    console.log(cow.name + '<br>');
+    console.log(cow.age);
+  </script>
+  <!-- 
+    배열이란 데이터가 '순서대로 들어가 있는것'
+    순서대로가 아니라 마음대로 넣을 수 있는 것이 객체
+  -->
+
+  <h2>Iterate</h2>
+  <script>
+    for(let key in cow) {
+      console.log(cow[key]);
+    }
+  </script>
+
+
+<h2>property & method</h2>
+<script>
+  cow.showAll = function() {
+    for(let key in this) {
+      console.log(key ,':', this[key]);
+    }
+  }
+  cow.showAll();
+</script>
+</body>
+</html>
