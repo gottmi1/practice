@@ -17,13 +17,47 @@
       transition: 500ms;
     }
     section:nth-child(1){background-color: antiquewhite;}
-    section:nth-child(2){height: 200vh; background-color: blueviolet;}
+    section:nth-child(2){position: relative; height: 200vh}
+
+    section>div{
+      background: url(/img/Layer\ 2.png) center center no-repeat;
+      background-size: cover;
+      width: 20vw;
+      height: 25vh;    
+      position: absolute;
+      background-color: aquamarine;
+    }
+    div:nth-child(even){
+      right: 10vw;
+    }
+    div:nth-child(odd){
+      left: 10vw;
+    }
+    div:nth-child(1){top: 0}
+    div:nth-child(2){top: 0}
+    div:nth-child(3){top: 50vh}
+    div:nth-child(4){top: 50vh}
+    div:nth-child(5){top: 100vh}
+    div:nth-child(6){top: 100vh}
+    div:nth-child(7){top: 150vh}
+    div:nth-child(8){top: 150vh}
+
+
   </style>
 </head>
 <body class="over-hid">
   
   <section></section>
-  <section></section>
+  <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
   <section></section>
   <section></section>
   <section></section>
@@ -52,7 +86,7 @@
       }
       console.log(sec[1].offsetTop);
 
-      if ( sec[1].offsetTop <= -600 ) {
+      if ( sec[1].offsetTop <= -1700 ) {
       document.body.classList.remove('over-hid');
 
       window.removeEventListener('wheel', scrollEvent);
