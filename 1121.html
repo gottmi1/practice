@@ -8,8 +8,10 @@
 
   <style>
     *{padding: 0; margin: 0;}
-    body{overflow: hidden;}
-    section{
+    .over-hid{
+      overflow: hidden;
+    }
+      section{
       width: 100vw;
       height: 100vh;
       transition: 500ms;
@@ -18,8 +20,14 @@
     section:nth-child(2){height: 200vh; background-color: blueviolet;}
   </style>
 </head>
-<body>
+<body class="over-hid">
   
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
   <section></section>
   <section></section>
 
@@ -29,17 +37,32 @@
 
     let num = 0;
     
-    const scrollEvent = () => {
-      sec[1].style.marginTop = "-" + num + "px";
-      num += 100;
+    const scrollEvent = (e) => {
+      
+      y = e.deltaY;
+      if( y > 0 ) {
+        let abc = sec[1].style.marginTop = "-" + num + "px";
+        num += 100;    
+        let current = parseInt(abc);
+        console.log(current);
+      } else {
+        num = 0;
+        sec[1].style.marginTop = num + "px";
+        num -= 100;
+      }
       console.log(sec[1].offsetTop);
+
+      if ( sec[1].offsetTop <= -600 ) {
+      document.body.classList.remove('over-hid');
+
+      window.removeEventListener('wheel', scrollEvent);
+      // 스코프 문제로, window 애드이벤트는 실행 중에 리무브이벤트리스너 조건을 걸어야 하는 모양이다.
+    }
     };
 
     window.addEventListener('wheel', scrollEvent);
 
-    if ( sec[1].offsetTop <= -600 ) {
-      window.removeEventListener('wheel', scrollEvent);
-    }
+    
     
 
   </script>
