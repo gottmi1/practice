@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,83 @@
   <title>Document</title>
 
   <style>
-    *{padding: 0; margin: 0;}
-    .over-hid{
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .over-hid {
       overflow: hidden;
     }
-      section{
+
+    section {
       width: 100vw;
       height: 100vh;
       transition: 500ms;
     }
-    section:nth-child(1){background-color: antiquewhite;}
-    section:nth-child(2){position: relative; height: 200vh}
 
-    section>div{
+    section:nth-child(1) {
+      background-color: antiquewhite;
+    }
+
+    section:nth-child(2) {
+      position: relative;
+      height: 200vh
+    }
+
+    section>div {
       background: url(/img/Layer\ 2.png) center center no-repeat;
       background-size: cover;
       width: 20vw;
-      height: 25vh;    
+      height: 25vh;
       position: absolute;
       background-color: aquamarine;
     }
-    div:nth-child(even){
+
+    div:nth-child(even) {
       right: 10vw;
     }
-    div:nth-child(odd){
+
+    div:nth-child(odd) {
       left: 10vw;
     }
-    div:nth-child(1){top: 0}
-    div:nth-child(2){top: 0}
-    div:nth-child(3){top: 50vh}
-    div:nth-child(4){top: 50vh}
-    div:nth-child(5){top: 100vh}
-    div:nth-child(6){top: 100vh}
-    div:nth-child(7){top: 150vh}
-    div:nth-child(8){top: 150vh}
 
+    div:nth-child(1) {
+      top: 0
+    }
 
+    div:nth-child(2) {
+      top: 0
+    }
+
+    div:nth-child(3) {
+      top: 50vh
+    }
+
+    div:nth-child(4) {
+      top: 50vh
+    }
+
+    div:nth-child(5) {
+      top: 100vh
+    }
+
+    div:nth-child(6) {
+      top: 100vh
+    }
+
+    div:nth-child(7) {
+      top: 150vh
+    }
+
+    div:nth-child(8) {
+      top: 150vh
+    }
   </style>
 </head>
+
 <body class="over-hid">
-  
+
   <section></section>
   <section>
     <div></div>
@@ -66,29 +104,29 @@
   <section></section>
 
   <script>
-
     const sec = document.querySelectorAll('section');
 
     let num = 0;
-    
+
     window.addEventListener('scroll', () => {
       console.log(scrollY + '스크롤와이값임');
 
-      if(scrollY >= 950) {
+      if (scrollY >= 950 && scrollY <= 2500) {
         sec[3].style.position = "fixed";
-      } else if (scrollY >= 2500){
-        sec[3].style.position = "";
+        let num = 1;
+        sec[3].style.opacity = num;
+        num -= 0.05
       } else {
         sec[3].style.position = "";
       }
-      })
+    })
 
     const scrollEvent = (e) => {
-      
+
       y = e.deltaY;
-      if( y > 0 ) {
+      if (y > 0) {
         let abc = sec[1].style.marginTop = "-" + num + "px";
-        num += 100;    
+        num += 100;
         let current = parseInt(abc);
         console.log(current);
       } else {
@@ -97,18 +135,14 @@
       }
       console.log(sec[1].offsetTop);
 
-      if ( sec[1].offsetTop <= -1700 ) {
-      document.body.classList.remove('over-hid');
-      window.removeEventListener('wheel', scrollEvent);
-      // 스코프 문제로, window 애드이벤트는 실행 중에 리무브이벤트리스너 조건을 걸어야 하는 모양이다.
-    }
+      if (sec[1].offsetTop <= -1700) {
+        document.body.classList.remove('over-hid');
+        window.removeEventListener('wheel', scrollEvent);
+        // 스코프 문제로, window 애드이벤트는 실행 중에 리무브이벤트리스너 조건을 걸어야 하는 모양이다.
+      }
     };
 
     window.addEventListener('wheel', scrollEvent);
-
-    
-    
-
   </script>
 
 </body>

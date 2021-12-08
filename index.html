@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
   <title>Parallax</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header>
 
@@ -22,25 +24,24 @@
     <img src="img/Layer 3.png" class="san2 translate" data-speed="-0.35" alt="">
     <img src="img/Layer 4.png" class="san3 translate" data-speed="-0.25" alt="">
     <img src="img/Layer 5.png" class="san4 translate" data-speed="0.3" alt="">
-    <img src="img/Layer 6.png" class="sky translate"  data-speed="0.3" alt="">
+    <img src="img/Layer 6.png" class="sky translate" data-speed="0.3" alt="">
   </header>
 
   <section></section>
 
   <script>
-
     const translate = document.querySelectorAll('.translate');
     console.log(translate);
 
     window.addEventListener('scroll', () => {
       let scroll = window.pageYOffset;
       console.log(scroll);
-      translate.forEach(element =>{
+      translate.forEach(element => {
         let speed = element.dataset.speed;
         element.style.transform = `translateY(${scroll * speed}px)`
       })
     })
-
   </script>
 </body>
+
 </html>
