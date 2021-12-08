@@ -57,7 +57,6 @@
     }
 
     section>div {
-      background: url(/img/Layer\ 2.png) center center no-repeat;
       background-size: cover;
       width: 20vw;
       height: 25vh;
@@ -133,7 +132,8 @@
 
   <section style="background-color: blue; height: 200vh;"></section>
   <section style="background: url(/image/silk1.jpg) center center no-repeat; background-size: cover; top: 0;height: 200vh;"></section>
-  <section style="position: absolute; top: 3000px; background-color: cadetblue;"></section>
+  <section style="position: absolute; top: 3000px; background: url(/image/커정누끼.png)center center no-repeat; background-size: cover;"></section>
+  <section style="position: absolute; top: 3900px; background-color: black;"></section>
 
 
   <script>
@@ -147,7 +147,7 @@
       
       console.log(scrollY + '스크롤와이값임');
 
-      if (scrollY >= 1650 && scrollY <= 3000) {
+      if (scrollY >= 1650 && scrollY <= 3900) {
         sec[3].style.position = "fixed";
       } else {
         sec[3].style.position = "";
