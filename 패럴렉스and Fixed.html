@@ -58,8 +58,8 @@
     <div></div>
     <div></div>
   </section>
-  <section></section>
-  <section></section>
+  <section style="background-color: blanchedalmond; "></section>
+  <section style="background-color: cadetblue; top: 0"></section>
   <section></section>
   <section></section>
   <section></section>
@@ -71,6 +71,18 @@
 
     let num = 0;
     
+    window.addEventListener('scroll', () => {
+      console.log(scrollY + '스크롤와이값임');
+
+      if(scrollY >= 950) {
+        sec[3].style.position = "fixed";
+      } else if (scrollY >= 2500){
+        sec[3].style.position = "";
+      } else {
+        sec[3].style.position = "";
+      }
+      })
+
     const scrollEvent = (e) => {
       
       y = e.deltaY;
@@ -87,7 +99,6 @@
 
       if ( sec[1].offsetTop <= -1700 ) {
       document.body.classList.remove('over-hid');
-
       window.removeEventListener('wheel', scrollEvent);
       // 스코프 문제로, window 애드이벤트는 실행 중에 리무브이벤트리스너 조건을 걸어야 하는 모양이다.
     }
