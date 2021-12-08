@@ -108,14 +108,23 @@
 
     let num = 0;
 
+    
+    // function opaci() {
+      
+    //   for(i = 1000; i < 2500; i = i + 100) {
+    //   let opa = 1;
+    //     sec[3].style.opacity = opa;
+    //     opa = opa - (i * 0.08);
+    //   }
+    // }
+    // console.log(opaci());
+
     window.addEventListener('scroll', () => {
       console.log(scrollY + '스크롤와이값임');
+      console.log(e.scollTop+ "스크롤 탑 값");
 
       if (scrollY >= 950 && scrollY <= 2500) {
         sec[3].style.position = "fixed";
-        let num = 1;
-        sec[3].style.opacity = num;
-        num -= 0.05
       } else {
         sec[3].style.position = "";
       }
