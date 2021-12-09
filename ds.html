@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+    ul,li{list-style: none;}
+    header{
+      width: 100%;
+      height: 14vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgba(189, 189, 189, 0.1);
+    }
+
+    #logo{
+      width: 10vw;
+      height: 100%;
+    }
+    #gnb{
+      width: 50vw;
+      height: 7vh;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 7vh;
+    }
+    #gnb>li{
+      float: left;
+      width: 20%;
+      font-size: 12px;
+    }
+    #sub{
+      position: relative;
+      z-index: 9;
+    }
+
+    section{
+      width: 100vw;
+      height: 200vh;
+    }
+    #image{
+      margin: 0 auto;
+      width: 80vw;
+      height: 84vh;
+    }
+    #image>img{
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div id="logo"><a href="#"><img style="width: 100%; height: 100%;" src="./img/jklogo.jpg" alt=""></a></div>
+    <ul id="gnb">
+      <li>FRAGRANCES
+        <ul id="sub">
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+        </ul>
+      </li>
+      <li>BATH & BODY
+        <ul id="sub">
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+        </ul>
+      </li>
+      <li>ART OF LIVING
+        <ul id="sub">
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+        </ul>
+      </li>
+      <li>THE MAISON
+        <ul id="sub">
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+        </ul>
+      </li>
+      <li>COLLECTIONS
+        <ul id="sub">
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+          <li>sub</li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <section>
+    <div id="image">
+      <img src="./img/main.jpg" alt="">
+    </div>
+
+  </section>
+  <footer></footer>
+
+</body>
+</html>
